@@ -6,6 +6,15 @@ const app = express();
 const port = 8000;
 // require path
 const path = require('path');
+// require ejs for views
+const ejs = require('ejs');
+
+// set app view engine to ejs
+app.set('views engine','ejs');
+// set app to look for  views in views folder while rendering 
+app.set('views',path.join(__dirname,'/views'));
+
+
 
 // set up routes all req will be redirected to this route
 app.use('/',require(path.join(__dirname,'/routes')));
