@@ -1,0 +1,24 @@
+{
+  "name": "todo_list_app",
+  "version": "1.0.0",
+  "description": "Its a complete todo list web application in which you can add task delete them set their priority ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZisCoding/Todo-list-app.git"
+  },
+  "author": "Zishan ali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZisCoding/Todo-list-app/issues"
+  },
+  "homepage": "https://github.com/ZisCoding/Todo-list-app#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.21"
+  }
+}
