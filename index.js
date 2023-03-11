@@ -8,6 +8,12 @@ const port = 8000;
 const path = require('path');
 // require ejs for views
 const ejs = require('ejs');
+// require mongoose to access db
+const mongoose = require('mongoose');
+
+//conenct to db using config
+const db = require(path.join(__dirname,'/config/mongoose.js'));
+
 
 // set app view engine to ejs
 app.set('views engine','ejs');
