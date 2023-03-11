@@ -4,8 +4,11 @@ const express = require('express');
 const app = express();
 // define port 
 const port = 8000;
+// require path
+const path = require('path');
 
-
+// set up routes all req will be redirected to this route
+app.use('/',require(path.join(__dirname,'/routes')));
 
 
 // startin the server 
