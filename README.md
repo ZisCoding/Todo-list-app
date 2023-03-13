@@ -1,0 +1,1 @@
+This is a basic todo list I made using HTML,CSS,JS and node.js server in this you can add any task and mark that task complete and you can also delete that task 

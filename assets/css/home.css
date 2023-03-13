@@ -1,0 +1,79 @@
+/* Setting the box sizing for all elements */
+*{
+    box-sizing: border-box;
+}
+/* making the scrollbar invisible */
+#todo-creator::-webkit-scrollbar, #main-row::-webkit-scrollbar {
+    display: none;
+}
+
+/* styling the body */
+body{
+    margin: 0px;
+    font-family: sans-serif;
+    background-color: rgb(32, 32, 120);
+    
+}
+/* styling the header */
+header{
+    background-color: rgb(32, 32, 120);
+    color: white;
+    font-size: xx-large;
+    padding: 1rem;
+    
+}
+
+main{
+    background-color: rgb(32, 32, 120);
+    height: 80vh;
+    
+}
+
+#main-row{
+    border: none !important;
+    background-color: rgb(46, 36, 36) ;
+    overflow: scroll;
+   
+}
+
+#todo-creator{
+    height: 100%;
+    overflow-y: scroll;
+    border-bottom: 1px solid grey;
+}
+
+
+
+@media  (min-width: 767px){
+    #todo-creator{
+        border: none;
+        border-right: 1px solid grey;
+    }
+}
+
+#form-container{
+    height: 18%;
+    width: 75%;
+}
+
+#task-data{
+    color: gray;
+    padding: 0.5rem;
+}
+
+.task-input{
+    height: 20%;
+    display: block;
+    border: none;
+    width: 100%;
+}
+
+.task-input:focus{
+    outline: none;
+    background-color: lightgray;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}

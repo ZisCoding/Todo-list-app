@@ -4,9 +4,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="//use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet"  href="/font_awesome/v6.3.0/css/all.css">
+    <link rel="stylesheet"  href="/font_awesome/v6.3.0/css/sharp-regular.css">
+    <link rel="stylesheet"  href="/font_awesome/v6.3.0/css/sharp-solid.css">
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
     <title>Let's Do It</title>
 </head>
 <body>
-    <h1>I am home page</h1>
+
+    <header>
+        <i class="fa-regular fa-check-double"></i>
+        <span>Let's Do it</span>
+    </header>
+
+    <main class="container-fluid ">
+
+        <div id="main-row" class="row h-100">
+
+            <div id="todo-creator" class=" h-100 col-12 col-md-5 py-3 px-0 d-flex flex-column align-items-center">
+                <h3 class="text-center text-light">Todo Creator</h3>
+
+                <div  id="form-container" class="w-75 h-100  text-light">
+                  <form id="task-data" action="/create-task" method="post">
+                    <div class="bg-light w-100 border-5 border-bottom py-2  ">
+                      <label for="discription">Discription</label>
+                      <input type="text" id="discription" class="task-input" name="discription">
+                    </div>
+                    
+                    <div class="bg-light w-100 border-5 border-bottom py-2">
+                      <label for="date">Date</label>
+                      <input type="date" class="task-input" placeholder="Date" name="date">
+                    </div>
+
+                    <div class="bg-light h-25 w-100 border-5 border-bottom py-2 mb-3">
+                      <label for="category">Category</label>
+                      <select name="category" class="task-input d-block">
+                        <option>Home</option>
+                        <option>Work</option>
+                      </select>
+                    </div>
+
+                    <button type="submit" class="w-100 btn btn-outline-light btn-lg"><i class="fa-solid fa-plus"></i> Add Task</button>
+                  </form>
+                </div>
+
+            </div>
+
+            <div id="todo-list" class="h-100 col-12 col-md-7 py-3 px-0 d-flex flex-column align-items-center">
+              <h3 class="text-center text-light">Todo List</h3>
+
+             
+              <div id="list-container"  class="h=100 w-75 text-light py-2">
+
+                <% for (let i=0 ; i<task.length ; i++) {%>
+                <div id="task" class="border-2 border-top border-bottom  py-2 d-flex justify-content-between">
+
+                  <div id="task-discription" class="w-75">
+                    <h5 class="<%=task[i]._id%>"  style="word-wrap: break-word; ;"><i class=" fa-sharp fa-solid fa-bars-progress"></i> <%=task[i].task%></h5>
+                    <span class="<%=task[i]._id%>" ><i class="fa-thin fa-calendar-days"></i> <%=task[i].date%></span><br>
+                    <span class="<%=task[i]._id%>">
+                      
+                      <% if (task[i].task_type=="Work") { %>
+                        <i class="fa-thin fa-briefcase"></i>
+                      <% } else { %>
+                        <i class="fa-thin fa-house-blank"></i>
+                      <% } %>
+                      <%=task[i].task_type%>
+                    
+                    </span>
+                  </div>
+
+                  <div id="delete" style="text-decoration: none !important;" class="w-25 px-3 d-flex flex-column justify-content-between">
+                    
+                    <button type="submit" value="<%=task[i]._id%>" id="complete" style="height: 60%;" class="  btn btn-outline-light mb-1">Mark Complete</button>
+                    <a id="delete-button" href="/delete/?id=<%=task[i]._id%>" style="height: 40%;" class="btn btn-outline-light">Delete</a>
+
+                  </div>
+                  
+                </div>
+                <%}%>
+              </div>
+
+            </div>
+
+
+        </div>
+        
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript" src="/js/index.js"></script>;
+
 </body>
 </html>
